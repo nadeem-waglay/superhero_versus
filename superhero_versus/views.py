@@ -6,14 +6,6 @@ from django.conf import settings
 from .models import Superhero
 
 
-class superheroView(APIView):
-    def get(self, request):
-        r = requests.get(settings.SUPERHERO_API + '1/powerstats')
-        print(r.status_code)
-        print(r.json()['name'])
-        return Response({'test': 'working'})
-
-
 class superheroVersusView(APIView):
     def get(self, request, name_a, name_b, stat='average'):
         superhero_a = Superhero.objects.filter(name__iexact=name_a)

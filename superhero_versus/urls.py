@@ -20,6 +20,5 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/superhero/', views.superheroView.as_view(), name='superheros'),
     path('api/superhero_versus/<str:name_a>/<str:name_b>/<str:stat>', views.superheroVersusView.as_view(), name='superheros_versus'),   # noqa: 501
 ]
